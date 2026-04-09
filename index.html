@@ -34,10 +34,57 @@
 
   <!-- CTA -->
   <div class="cta">
-    <a href="https://www.youtube.com/@832animation" target="_blank">Play Showreel →</a>
+    <a href="#" id="openVideo">Play Showreel →</a>
   </div>
 
 </section>
 
+
+
+  <div class="video-popup" id="videoPopup">
+  <div class="video-content">
+    <span class="close-video">&times;</span>
+
+    <iframe 
+      id="youtubeFrame"
+      src=""
+      frameborder="0"
+      allow="autoplay; fullscreen"
+      allowfullscreen>
+    </iframe>
+
+  </div>
+</div>
+
+
+
+  <script>
+const openBtn = document.getElementById("openVideo");
+const popup = document.getElementById("videoPopup");
+const closeBtn = document.querySelector(".close-video");
+const iframe = document.getElementById("youtubeFrame");
+
+// GANTI LINK YOUTUBE DI SINI
+const videoURL = "https://youtube.com/embed/eeXgcM1k0rCkuDDU";
+
+openBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  popup.style.display = "flex";
+  iframe.src = videoURL;
+});
+
+closeBtn.addEventListener("click", () => {
+  popup.style.display = "none";
+  iframe.src = ""; // stop video
+});
+
+// klik luar untuk close
+popup.addEventListener("click", (e) => {
+  if (e.target === popup) {
+    popup.style.display = "none";
+    iframe.src = "";
+  }
+});
+</script>
 </body>
 </html>
