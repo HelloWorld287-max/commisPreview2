@@ -159,9 +159,16 @@ body {
     grid-template-columns: 1fr;
   }
 
+  /* 🔥 FIX RATIO */
+  .card {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
   .card.full {
     grid-column: span 1;
-    height: 220px;
+    height: auto;
+    aspect-ratio: 16 / 3; /* 🔥 wide cinematic */
   }
 
 }
