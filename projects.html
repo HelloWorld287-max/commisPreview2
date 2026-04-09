@@ -159,9 +159,14 @@ body {
     grid-template-columns: 1fr;
   }
 
+  .card {
+    height: auto; /* ✅ biar ikut ratio */
+    aspect-ratio: 16 / 9; /* default */
+  }
+
   .card.full {
-    grid-column: span 1;
-    height: 220px;
+    height: auto;
+    aspect-ratio: 16 / 3; /* 🔥 sesuai keinginan kamu */
   }
 
 }
