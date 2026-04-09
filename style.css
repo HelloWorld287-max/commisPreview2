@@ -174,3 +174,46 @@ body {
   }
 
 }
+
+
+/* POPUP BACKGROUND */
+.video-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(6px);
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+}
+
+/* BOX VIDEO */
+.video-content {
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+}
+
+/* IFRAME */
+.video-content iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+/* CLOSE BUTTON */
+.close-video {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
