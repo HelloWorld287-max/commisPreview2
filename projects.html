@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Projects</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom, #0f0f0f, #2a2a2a);
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 300;
+  color: white;
+}
+
+.logo a {
+  text-decoration: none;
+  color: white;
+}
+
+.menu a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: white;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  opacity: 1;
+}
+
+/* HERO */
+.hero {
+  height: 10vh;
+}
+
+/* PROJECT SECTION */
+.projects {
+  padding: 80px 50px;
+}
+
+/* ===== TIMELINE TAMBAHAN ===== */
+.year-group {
+  display: flex;
+  margin-bottom: 60px;
+}
+
+.year-label {
+  width: 80px;
+  font-size: 46px;
+  font-weight: 500;
+  color: #ffffffb7; /* warna utama */
+  opacity: 1;
+}
+
+.year-content {
+  flex: 1;
+}
+
+.year-line {
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.863);
+  margin-bottom: 20px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* ini kunci */
+  overflow: hidden;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.card.full {
+  grid-column: span 2;
+  aspect-ratio: 16 / 9;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* biar tidak gepeng */
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+/* overlay */
+.overlay-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  color: white;
+}
+
+.overlay-bar h3 {
+  font-size: 14px;
+}
+
+.overlay-bar p {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .year-group {
+    flex-direction: column;
+  }
+
+  .year-label {
+    margin-bottom: 10px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card.full {
+    grid-column: span 1;
+    aspect-ratio: 16 / 9;
+  }
+
+}
+
+/* FOOTER */
+.footer {
+  position: relative;
+  width: 100%;
+  padding: 20px 50px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  color: white;
+}
+
+.footer-social a {
+  margin-right: 15px;
+  color: white;
+  opacity: 0.7;
+}
+
+.footer-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .menu a {
+    margin-left: 15px;
+    font-size: 13px;
+  }
+
+  .contact {
+    padding: 60px 20px;
+  }
+
+  .contact h1 {
+    font-size: 28px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-center {
+    position: static;
+    transform: none;
+  }
+
+}
+
+
+/* POPUP */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+.popup .close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.popup {
+  backdrop-filter: blur(5px);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+  <div class="logo">
+    <a href="index.html">Home</a>
+  </div>
+
+  <div class="menu">
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</div>
+
+<section class="hero"></section>
+
+<section class="projects">
+
+    <!-- 2026 -->
+  <div class="year-group">
+    <div class="year-label">'26</div>
+    <div class="year-content">
+      <div class="year-line"></div>
+      <div class="grid">
+
+        <div class="card full"><img src="https://i.ibb.co.com/Z1bS73rW/MOTION-GRAPHICS-2026-01.jpg"><div class="overlay-bar"><h3>VOLTACTION Performance</h3><p>February 26 • Entertainment</p></div></div>
+        <div class="card full"><img src="https://i.ibb.co.com/tTrJKqZz/MOTION-GRAPHICS-2026-02.jpg"><div class="overlay-bar"><h3>VOLTACTION Performance</h3><p>February 26 • Entertainment</p></div></div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 2025 -->
+  <div class="year-group">
+    <div class="year-label">'25</div>
+    <div class="year-content">
+      <div class="year-line"></div>
+      <div class="grid">
+
+        <div class="card full"><img src="https://i.ibb.co.com/1tJrgw2V/MOTION-GRAPHICS-2025-02.jpg"><div class="overlay-bar"><h3>VOLTACTION Performance</h3><p>February 26 • Entertainment</p></div></div>
+        <div class="card"><img src="https://i.ibb.co.com/rGRchXS5/MOTION-GRAPHICS-2025.jpg"><div class="overlay-bar"><h3>Music Video Project</h3><p>January 15 • Entertainment</p></div></div>
+        <div class="card"><img src="https://i.ibb.co.com/nNNPVmRv/VISUAL-EFFECTS-2025.jpg"><div class="overlay-bar"><h3>Commercial Ads</h3><p>January 10 • Corporate</p></div></div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 2024 -->
+  <div class="year-group">
+    <div class="year-label">'24</div>
+    <div class="year-content">
+      <div class="year-line"></div>
+      <div class="grid">
+
+        <div class="card"><img src="https://i.ibb.co.com/Xf26djbZ/MOTION-GRAPHICS-2024-01.jpg"><div class="overlay-bar"><h3>Music Video Project</h3><p>January 15 • Entertainment</p></div></div>
+        <div class="card"><img src="https://i.ibb.co.com/HftN5XKw/MOTION-GRAPHICS-2024-02.jpg"><div class="overlay-bar"><h3>Commercial Ads</h3><p>January 10 • Corporate</p></div></div>
+        <div class="card full"><img src="https://i.ibb.co.com/JwSnW6P5/MOTION-GRAPHICS-2024-03.jpg"><div class="overlay-bar"><h3>VOLTACTION Performance</h3><p>February 26 • Entertainment</p></div></div>
+        <div class="card"><img src="https://i.ibb.co.com/wrdgk9j0/VISUAL-EFFECTS-2024-01.jpg"><div class="overlay-bar"><h3>Music Video Project</h3><p>January 15 • Entertainment</p></div></div>
+        <div class="card"><img src="https://i.ibb.co.com/yBk8RTKS/VISUAL-EFFECTS-2024-02.jpg"><div class="overlay-bar"><h3>Commercial Ads</h3><p>January 10 • Corporate</p></div></div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 2021 -->
+  <div class="year-group">
+    <div class="year-label">'21</div>
+    <div class="year-content">
+      <div class="year-line"></div>
+      <div class="grid">
+
+        <div class="card">
+          <img src="https://i.ibb.co.com/jZzY26wB/3-DCG-2021-01.jpg">
+          <div class="overlay-bar"><h3>=LOVE 20th Single</h3><p>March 01 • Entertainment</p></div>
+        </div>
+
+        <div class="card">
+          <img src="https://i.ibb.co.com/BHmc383r/3-DCG-2021-02.jpg">
+          <div class="overlay-bar"><h3>Live Streaming Project</h3><p>February 27 • Corporate</p></div>
+        </div>
+
+        <div class="card full">
+          <img src="https://i.ibb.co.com/yBVDqwnf/MOTION-GRAPHICS-2021.jpg">
+          <div class="overlay-bar"><h3>VOLTACTION Performance</h3><p>February 26 • Entertainment</p></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  
+
+  
+
+  
+
+</section>
+
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <span class="close">&times;</span>
+  <img class="popup-img" id="popup-img">
+</div>
+
+
+<footer class="footer">
+  <div class="footer-social">
+  <a href="https://x.com/emitsukino" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+  <a href="https://www.instagram.com/832aniwork" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+  <a href="https://www.youtube.com/@832animation" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+  <a href="https://linkedin.com/in/username" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+  </div>
+
+  <div class="footer-center">
+    © 2026 Zero Power
+  </div>
+</footer>
+
+
+<script>
+const popup = document.getElementById("popup");
+const popupImg = document.getElementById("popup-img");
+const closeBtn = document.querySelector(".close");
+
+document.querySelectorAll(".card img").forEach(img => {
+  img.addEventListener("click", () => {
+    popup.style.display = "flex";
+    popupImg.src = img.src;
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  popup.style.display = "none";
+});
+
+popup.addEventListener("click", (e) => {
+  if (e.target === popup) {
+    popup.style.display = "none";
+  }
+});
+</script>
+
+
+</body>
+</html>
