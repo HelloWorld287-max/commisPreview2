@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contact</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom, #0f0f0f, #2a2a2a);
+  padding-top: 80px;
+  color: white;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+}
+
+.logo a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.menu a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: white;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  opacity: 1;
+}
+
+/* CONTACT SECTION */
+.contact {
+  padding: 80px 50px;
+  max-width: 700px;
+}
+
+.contact h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  opacity: 0.7;
+  margin-bottom: 30px;
+}
+
+/* FORM */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  background: #111;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  outline: none;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+/* BUTTON */
+.contact-form button {
+  padding: 12px;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  opacity: 0.8;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 50px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+}
+
+.footer-social a {
+  margin-right: 15px;
+  color: white;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.footer-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .menu a {
+    margin-left: 15px;
+    font-size: 13px;
+  }
+
+  .contact {
+    padding: 60px 20px;
+  }
+
+  .contact h1 {
+    font-size: 28px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-center {
+    position: static;
+    transform: none;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">
+    <a href="index.html">Home</a>
+  </div>
+
+  <div class="menu">
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact">
+  <h1>Contact</h1>
+  <p>Feel free to reach out for collaboration or project inquiries.</p>
+
+  <form class="contact-form">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-social">
+  <a href="https://x.com/emitsukino" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+  <a href="https://www.instagram.com/832aniwork" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+  <a href="https://www.youtube.com/@832animation" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+  <a href="https://linkedin.com/in/username" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+  </div>
+
+  <div class="footer-center">
+    © 2026 Zero Power
+  </div>
+</footer>
+
+</body>
+</html>
